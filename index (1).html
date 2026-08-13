@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simphiwe Khumalo — Junior Data Analyst</title>
+    <meta name="description" content="Portfolio and CV of Simphiwe Khumalo — Junior Data Analyst. Power BI, SQL, Python, ML anomaly detection and n8n automation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: '#1d1d1f',
+                        inksecondary: '#6e6e73',
+                        surface: '#fbfbfd',
+                        surfacealt: '#f5f5f7',
+                        divider: '#d2d2d7',
+                        accent: '#0071e3',
+                        accenthover: '#0077ed',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        html, body { background: #fbfbfd; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; }
+        code, .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        .display-1 { font-size: clamp(2.75rem, 6vw, 5.25rem); font-weight: 600; letter-spacing: -0.035em; line-height: 1.05; }
+        .display-2 { font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
+        .display-3 { font-size: clamp(1.5rem, 2.4vw, 2rem); font-weight: 600; letter-spacing: -0.015em; line-height: 1.2; }
+        .eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; }
+        .stat-num { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 600; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+
+        .btn-primary { display: inline-flex; align-items: center; gap: 0.4rem; background: #0071e3; color: #fff; padding: 0.7rem 1.4rem; border-radius: 980px; font-size: 0.95rem; font-weight: 400; transition: background .2s ease; }
+        .btn-primary:hover { background: #0077ed; }
+        .btn-ghost { display: inline-flex; align-items: center; gap: 0.35rem; color: #0071e3; font-size: 0.95rem; font-weight: 400; transition: opacity .2s ease; }
+        .btn-ghost:hover { opacity: .7; }
+        .btn-dark { display: inline-flex; align-items: center; gap: 0.4rem; background: #fff; color: #000; padding: 0.7rem 1.4rem; border-radius: 980px; font-size: 0.95rem; font-weight: 400; transition: opacity .2s ease; }
+        .btn-dark:hover { opacity: .85; }
+
+        .card { background: #fff; border: 1px solid #d2d2d7; border-radius: 20px; transition: box-shadow .25s ease, transform .25s ease, border-color .25s ease; }
+        .card:hover { box-shadow: 0 20px 40px -20px rgba(0,0,0,0.12); transform: translateY(-2px); border-color: #b8b8bd; }
+
+        .chip { display: inline-flex; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; letter-spacing: 0.01em; padding: 0.3rem 0.6rem; border-radius: 6px; background: #f5f5f7; color: #6e6e73; border: 1px solid #d2d2d7; }
+
+        .seg-btn.active { background: #fff; color: #1d1d1f; box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
+        .seg-btn:not(.active) { color: #6e6e73; }
+
+        .timeline-dot { width: 10px; height: 10px; border-radius: 50%; background: #1d1d1f; }
+
+        @media print {
+            .no-print { display: none !important; }
+            body { background: white !important; color: black !important; }
+            section { background: white !important; }
+            .print-card { border: 1px solid #ddd !important; box-shadow: none !important; page-break-inside: avoid; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-ink min-h-screen flex flex-col selection:bg-accent selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-xl border-b border-divider no-print">
+        <div class="max-w-6xl mx-auto px-5">
+            <div class="flex items-center justify-between h-11">
+                <a href="#hero" class="text-ink text-[13px] font-medium tracking-tight">Simphiwe Khumalo</a>
+
+                <nav class="hidden md:flex items-center space-x-8 text-[12px] text-inksecondary">
+                    <a href="#about" class="hover:text-ink transition-colors">About</a>
+                    <a href="#skills" class="hover:text-ink transition-colors">Skills</a>
+                    <a href="#projects" class="hover:text-ink transition-colors">Projects</a>
+                    <a href="#experience" class="hover:text-ink transition-colors">Achievements</a>
+                    <a href="#education" class="hover:text-ink transition-colors">Education</a>
+                    <a href="#contact" class="hover:text-ink transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button onclick="window.print()" class="hidden sm:inline-flex text-[12px] text-inksecondary hover:text-ink transition-colors items-center gap-1.5">
+                        <i class="fa-solid fa-arrow-down-to-line text-[10px]"></i>
+                        <span>Download CV</span>
+                    </button>
+                    <button id="menuBtn" class="md:hidden p-1.5 text-ink">
+                        <i class="fa-solid fa-bars text-base"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t border-divider px-5 pt-2 pb-4 space-y-1 text-[13px] text-inksecondary">
+            <a href="#about" class="block py-2 hover:text-ink">About</a>
+            <a href="#skills" class="block py-2 hover:text-ink">Skills</a>
+            <a href="#projects" class="block py-2 hover:text-ink">Projects</a>
+            <a href="#experience" class="block py-2 hover:text-ink">Achievements</a>
+            <a href="#education" class="block py-2 hover:text-ink">Education</a>
+            <a href="#contact" class="block py-2 hover:text-ink">Contact</a>
+            <button onclick="window.print()" class="block py-2 hover:text-ink">Download CV</button>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-11">
+
+        <!-- HERO -->
+        <section id="hero" class="pt-20 pb-16 md:pt-28 md:pb-20 text-center">
+            <div class="max-w-3xl mx-auto px-5">
+
+                <div class="w-40 sm:w-44 mx-auto mb-7 rounded-2xl overflow-hidden border border-divider shadow-sm bg-surfacealt" style="aspect-ratio: 600 / 797;">
+                    <img src="profile.jpg" alt="Simphiwe Khumalo" class="w-full h-full object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-full items-center justify-center text-inksecondary hidden">
+                        <i class="fa-solid fa-user text-3xl"></i>
+                    </div>
+                </div>
+
+                <p class="eyebrow text-accent mb-4">Junior Data Analyst</p>
+                <p class="text-lg sm:text-xl text-inksecondary max-w-xl mx-auto leading-relaxed">
+                    I help businesses understand their data and make better decisions with it.
+                </p>
+
+                <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[13px] text-inksecondary">
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-location-dot text-accent text-[11px]"></i>Durban, KwaZulu-Natal, South Africa</span>
+                    <span class="flex items-center gap-1.5"><i class="fa-solid fa-envelope text-accent text-[11px]"></i><a href="mailto:Simphiwesanele60@gmail.com" class="hover:text-ink transition-colors">Simphiwesanele60@gmail.com</a></span>
+                </div>
+
+                <div class="mt-6 flex items-center justify-center gap-4">
+                    <a href="https://linkedin.com/in/simphiwe-khumalo-7173a4241" target="_blank" class="text-inksecondary hover:text-ink transition-colors"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                    <a href="https://github.com/Phiwe22code" target="_blank" class="text-inksecondary hover:text-ink transition-colors"><i class="fa-brands fa-github text-lg"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="py-20 md:py-28 bg-surface">
+            <div class="max-w-6xl mx-auto px-5">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <p class="eyebrow text-accent mb-3">Professional Summary</p>
+                    <h2 class="display-2 text-ink">End-to-end analytics &amp; intelligence</h2>
+                </div>
+
+                <div class="max-w-3xl mx-auto card p-8 md:p-10 space-y-4">
+                    <h3 class="display-3 text-ink">Data Analyst</h3>
+                    <p class="text-inksecondary leading-relaxed">
+                        I work hands-on across Power BI, SQL, Excel and Python — covering the full analytics workflow from extraction and transformation through to data cleaning, DAX modelling, ML-based anomaly detection and interactive dashboard design.
+                    </p>
+                    <p class="text-inksecondary leading-relaxed">
+                        What motivates me is turning complex datasets into insight that's clear enough for confident, fast executive decisions.
+                    </p>
+                    <div class="pt-3 flex flex-wrap gap-2">
+                        <span class="chip">Data Engineering & ETL</span>
+                        <span class="chip">DAX & Star Schemas</span>
+                        <span class="chip">ML Anomaly Detection</span>
+                        <span class="chip">n8n Process Automation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section id="skills" class="py-20 md:py-28 bg-surfacealt">
+            <div class="max-w-6xl mx-auto px-5">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <p class="eyebrow text-accent mb-3">Technical Proficiency</p>
+                    <h2 class="display-2 text-ink">Skills &amp; analytics toolkit</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card p-7 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white border border-divider flex items-center justify-center text-ink"><i class="fa-solid fa-chart-bar"></i></div>
+                            <h3 class="font-semibold text-ink">Power BI</h3>
+                        </div>
+                        <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li>DAX measures & calculated columns</li>
+                            <li>Power Query (M language) ETL</li>
+                            <li>Star-schema data modelling</li>
+                            <li>Drill-through, bookmarks & custom dashboards</li>
+                            <li>Power BI Service publishing & reports</li>
+                        </ul>
+                    </div>
+
+                    <div class="card p-7 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white border border-divider flex items-center justify-center text-ink"><i class="fa-solid fa-database"></i></div>
+                            <h3 class="font-semibold text-ink">SQL & Relational DBs</h3>
+                        </div>
+                        <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li>Complex queries, aggregations & subqueries</li>
+                            <li>Joins & foreign key relationships</li>
+                            <li>Stored procedures & CASE statements</li>
+                            <li>Database schema normalisation</li>
+                            <li>SQL Server Management Studio (SSMS)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card p-7 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white border border-divider flex items-center justify-center text-ink"><i class="fa-brands fa-python"></i></div>
+                            <h3 class="font-semibold text-ink">Python & Data Science</h3>
+                        </div>
+                        <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li>Pandas & NumPy for data cleaning</li>
+                            <li>Scikit-learn (Isolation Forest, KNN, Regression)</li>
+                            <li>Matplotlib & Seaborn visualisations</li>
+                            <li>ML pipelines & predictive modelling</li>
+                            <li>Jupyter Notebooks</li>
+                        </ul>
+                    </div>
+
+                    <div class="card p-7 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white border border-divider flex items-center justify-center text-ink"><i class="fa-solid fa-file-excel"></i></div>
+                            <h3 class="font-semibold text-ink">Advanced Excel</h3>
+                        </div>
+                        <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li>XLOOKUP, INDEX/MATCH, dynamic arrays</li>
+                            <li>Pivot tables, slicers & dynamic pivot charts</li>
+                            <li>SUMIFS, IFS, Solver & Goal Seek</li>
+                            <li>Regression analysis & financial models</li>
+                        </ul>
+                    </div>
+
+                    <div class="card p-7 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white border border-divider flex items-center justify-center text-ink"><i class="fa-solid fa-robot"></i></div>
+                            <h3 class="font-semibold text-ink">AI & Automation</h3>
+                        </div>
+                        <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li>n8n workflow automation & webhooks</li>
+                            <li>AI agent nodes & LLM copilot integrations</li>
+                            <li>Prompt engineering (OpenAI, Claude, Gemini)</li>
+                            <li>RAG-style document intelligence solutions</li>
+                        </ul>
+                    </div>
+
+                    <div class="card p-7 space-y-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-white border border-divider flex items-center justify-center text-ink"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <h3 class="font-semibold text-ink">Developer Tools</h3>
+                        </div>
+                        <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside leading-relaxed">
+                            <li>C# .NET fundamentals & OOP</li>
+                            <li>Azure Cloud Fundamentals</li>
+                            <li>Git, GitHub & version control</li>
+                            <li>Agile/Scrum, SDLC & data storytelling</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="py-20 md:py-28 bg-surface">
+            <div class="max-w-6xl mx-auto px-5">
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <p class="eyebrow text-accent mb-3">Featured Work</p>
+                    <h2 class="display-2 text-ink">Portfolio projects</h2>
+                </div>
+
+                <div class="flex justify-center mb-12 no-print">
+                    <div class="inline-flex flex-wrap items-center justify-center gap-1 bg-surfacealt rounded-full p-1" id="projectFilters">
+                        <button onclick="filterProjects('all', this)" class="seg-btn active px-4 py-1.5 rounded-full text-[12px] font-medium transition-all">All</button>
+                        <button onclick="filterProjects('python', this)" class="seg-btn px-4 py-1.5 rounded-full text-[12px] font-medium transition-all">Python & ML</button>
+                        <button onclick="filterProjects('powerbi', this)" class="seg-btn px-4 py-1.5 rounded-full text-[12px] font-medium transition-all">Power BI</button>
+                        <button onclick="filterProjects('excel', this)" class="seg-btn px-4 py-1.5 rounded-full text-[12px] font-medium transition-all">Excel</button>
+                        <button onclick="filterProjects('sql', this)" class="seg-btn px-4 py-1.5 rounded-full text-[12px] font-medium transition-all">SQL</button>
+                        <button onclick="filterProjects('n8n', this)" class="seg-btn px-4 py-1.5 rounded-full text-[12px] font-medium transition-all">n8n</button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projectsGrid">
+
+                    <div class="project-card python card p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="chip">Python · ML · Anomaly Detection</span>
+                                <i class="fa-solid fa-shield-halved text-inksecondary"></i>
+                            </div>
+                            <h3 class="font-semibold text-ink mb-2">Financial Crime Detection Engine</h3>
+                            <p class="text-[13px] text-inksecondary leading-relaxed mb-4">
+                                End-to-end unsupervised ML system detecting suspicious financial activity without historical fraud labels, across 50,000+ simulated transactions.
+                            </p>
+                            <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside mb-6">
+                                <li>Isolation Forest model for unlabelled fraud detection</li>
+                                <li>Account behavioural profiles (timing, frequency, cross-border)</li>
+                                <li>Automated plain-English risk narrative generation</li>
+                                <li>Executive & analyst drill-down dashboards</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-divider flex items-center justify-between text-[12px]">
+                            <span class="text-inksecondary">Unsupervised Learning</span>
+                            <a href="https://github.com/Phiwe22code" target="_blank" class="btn-ghost">View Code <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card python card p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="chip">SATNAC Winner · Python</span>
+                                <i class="fa-solid fa-tower-cell text-inksecondary"></i>
+                            </div>
+                            <h3 class="font-semibold text-ink mb-2">Network Profit Optimizer</h3>
+                            <p class="text-[13px] text-inksecondary leading-relaxed mb-4">
+                                ML-powered capex optimisation tool predicting optimal cell tower placement by ROI. Won 1st place at SATNAC 2025.
+                            </p>
+                            <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside mb-6">
+                                <li>Predictive model using migration, income & device density</li>
+                                <li>Demonstrated a potential 30% reduction in telecoms capex</li>
+                                <li>Pitched to industry executives at a Cape Town tech conference</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-divider flex items-center justify-between text-[12px]">
+                            <span class="text-accent font-medium">SATNAC 2025 Winner</span>
+                            <a href="https://github.com/Phiwe22code" target="_blank" class="btn-ghost">Details <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card powerbi card p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="chip">Power BI · DAX · Modelling</span>
+                                <i class="fa-solid fa-chart-line text-inksecondary"></i>
+                            </div>
+                            <h3 class="font-semibold text-ink mb-2">AfroSense Sales Dashboard</h3>
+                            <p class="text-[13px] text-inksecondary leading-relaxed mb-4">
+                                Executive Power BI dashboard analysing global retail performance across markets, product lines and multi-year time horizons.
+                            </p>
+                            <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside mb-6">
+                                <li>KPI tracking for revenue, profit margin & shipping cost trends</li>
+                                <li>Custom DAX measures for YoY comparisons & segment filtering</li>
+                                <li>Multi-page report with slicers, bookmarks & drill-throughs</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-divider flex items-center justify-between text-[12px]">
+                            <span class="text-inksecondary">Retail BI</span>
+                            <a href="https://github.com/Phiwe22code" target="_blank" class="btn-ghost">View Report <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card excel card p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="chip">Excel · Pivot Tables · R436M</span>
+                                <i class="fa-solid fa-file-invoice-dollar text-inksecondary"></i>
+                            </div>
+                            <h3 class="font-semibold text-ink mb-2">Loan Portfolio Performance Report</h3>
+                            <p class="text-[13px] text-inksecondary leading-relaxed mb-4">
+                                Interactive Excel dashboard analysing over R436M in bank loan disbursements across a 9-year period (2011–2019).
+                            </p>
+                            <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside mb-6">
+                                <li>Tracked disbursements, avg. interest (14.76%) & outstanding debt</li>
+                                <li>Segmented demographics: male borrowers (81%), graduates largest</li>
+                                <li>Dynamic pivot charts, KPI cards & slicer controls</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-divider flex items-center justify-between text-[12px]">
+                            <span class="text-inksecondary">Financial Modeling</span>
+                            <a href="https://github.com/Phiwe22code" target="_blank" class="btn-ghost">View Workbook <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card sql card p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="chip">SQL Server · SSMS · Design</span>
+                                <i class="fa-solid fa-book-bookmark text-inksecondary"></i>
+                            </div>
+                            <h3 class="font-semibold text-ink mb-2">Library Management Database</h3>
+                            <p class="text-[13px] text-inksecondary leading-relaxed mb-4">
+                                Relational database schema managing complete library operations — cataloging, member subscriptions and loan records.
+                            </p>
+                            <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside mb-6">
+                                <li>Normalised relational schema with foreign key constraints</li>
+                                <li>Queries with joins, aggregations & CASE statements</li>
+                                <li>Stored procedures for checkouts, returns & registration</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-divider flex items-center justify-between text-[12px]">
+                            <span class="text-inksecondary">Database Engineering</span>
+                            <a href="https://github.com/Phiwe22code" target="_blank" class="btn-ghost">SQL Scripts <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card n8n card p-7 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="chip">n8n · Automation · Scraping</span>
+                                <i class="fa-solid fa-diagram-project text-inksecondary"></i>
+                            </div>
+                            <h3 class="font-semibold text-ink mb-2">Job Tracker Workflow</h3>
+                            <p class="text-[13px] text-inksecondary leading-relaxed mb-4">
+                                Automated n8n workflow monitoring online job boards and logging new target postings without manual intervention.
+                            </p>
+                            <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside mb-6">
+                                <li>Scheduled trigger nodes for periodic job board scraping</li>
+                                <li>HTTP Request & Code nodes to parse & deduplicate listings</li>
+                                <li>Automatic Google Sheets logging & email alert triggers</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-divider flex items-center justify-between text-[12px]">
+                            <span class="text-inksecondary">Process Automation</span>
+                            <a href="https://github.com/Phiwe22code" target="_blank" class="btn-ghost">Workflow JSON <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="project-card n8n card p-7 flex flex-col justify-between lg:col-start-2">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="chip">n8n · Automation · Lead Gen</span>
+                                <i class="fa-solid fa-filter-circle-dollar text-inksecondary"></i>
+                            </div>
+                            <h3 class="font-semibold text-ink mb-2">Lead Finder Workflow</h3>
+                            <p class="text-[13px] text-inksecondary leading-relaxed mb-4">
+                                Automated lead qualification pipeline enriching prospect data with company background and key contact details.
+                            </p>
+                            <ul class="text-[13px] text-inksecondary space-y-1.5 list-disc list-inside mb-6">
+                                <li>Scrapes potential leads from target web sources</li>
+                                <li>Custom qualification logic using JavaScript Code nodes</li>
+                                <li>Google Sheets data sync + real-time email summaries</li>
+                            </ul>
+                        </div>
+                        <div class="pt-4 border-t border-divider flex items-center justify-between text-[12px]">
+                            <span class="text-inksecondary">Data Enrichment</span>
+                            <a href="https://github.com/Phiwe22code" target="_blank" class="btn-ghost">View Architecture <i class="fa-solid fa-chevron-right text-[9px]"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="py-20 md:py-28 bg-surfacealt">
+            <div class="max-w-6xl mx-auto px-5">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <p class="eyebrow text-accent mb-3">Track Record</p>
+                    <h2 class="display-2 text-ink">Achievements</h2>
+                </div>
+
+                <div class="max-w-3xl mx-auto relative border-l-2 border-divider pl-7 sm:pl-9">
+
+                    <div class="relative">
+                        <div class="absolute -left-[33px] sm:-left-[41px] top-1.5 timeline-dot border-4 border-surfacealt"></div>
+                        <div class="card p-7 space-y-3">
+                            <div class="flex flex-wrap items-center justify-between gap-2">
+                                <h3 class="font-semibold text-ink">Industry Solutions Challenge — Winner</h3>
+                                <span class="chip">SATNAC 2025</span>
+                            </div>
+                            <p class="text-[12px] text-inksecondary font-mono">Python (Pandas, Scikit-learn) · Predictive Modelling · Feature Engineering · Data Viz</p>
+                            <ul class="text-[13px] text-inksecondary space-y-2 list-disc list-inside leading-relaxed">
+                                <li>Competed in the SATNAC 2025 Industry Solutions Challenge, building an ML-based capex optimisation solution for telecom infrastructure.</li>
+                                <li>Developed a predictive model using migration rates, income levels and connected device data to identify highest-ROI cell tower placement sites.</li>
+                                <li>Demonstrated a potential 30% reduction in capex through algorithmic site selection, validated against real-world network investment scenarios.</li>
+                                <li>Presented to an industry panel, winning 1st place against multiple competing teams; showcased at a Cape Town tech conference.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education" class="py-20 md:py-28 bg-surface">
+            <div class="max-w-6xl mx-auto px-5">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <p class="eyebrow text-accent mb-3">Academic Background</p>
+                    <h2 class="display-2 text-ink">Education &amp; qualifications</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+                    <div class="card p-8 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="chip">NQF Level 6</span>
+                            <span class="text-[12px] text-inksecondary font-mono">2022 – 2025</span>
+                        </div>
+                        <h3 class="font-semibold text-ink text-lg">National Diploma in ICT: Applications Development</h3>
+                        <p class="text-[13px] text-accent font-medium">Durban University of Technology (DUT)</p>
+                        <div class="pt-2">
+                            <h4 class="text-[11px] font-semibold text-inksecondary uppercase tracking-wider mb-2">Relevant Modules</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="chip">Database Design</span>
+                                <span class="chip">SQL</span>
+                                <span class="chip">Information Systems</span>
+                                <span class="chip">Systems Analysis & Design</span>
+                                <span class="chip">Project Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-8 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="chip">Matric Senior Certificate</span>
+                            <span class="text-[12px] text-inksecondary font-mono">2016 – 2020</span>
+                        </div>
+                        <h3 class="font-semibold text-ink text-lg">National Senior Certificate (Matric)</h3>
+                        <p class="text-[13px] text-accent font-medium">Grosvenor Boys High School</p>
+                        <ul class="text-[13px] text-inksecondary space-y-2 list-disc list-inside pt-2">
+                            <li>Achieved a Bachelor's Pass status.</li>
+                            <li>Served as a Prefect during the 2020 matric year, demonstrating leadership and responsibility.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="py-20 md:py-28 bg-surfacealt no-print">
+            <div class="max-w-4xl mx-auto px-5">
+                <div class="text-center space-y-3 mb-12">
+                    <p class="eyebrow text-accent">Get In Touch</p>
+                    <h2 class="display-2 text-ink">Let's connect and build together.</h2>
+                    <p class="text-inksecondary max-w-lg mx-auto">
+                        I'm open to Data Analyst, BI Analyst and Analytics Developer roles. Reach out by email or LinkedIn.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+                    <button onclick="copyToClipboard('Simphiwesanele60@gmail.com', 'Email copied!')" class="card p-4 flex items-center gap-3 text-left">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-surfacealt flex items-center justify-center text-ink"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="overflow-hidden">
+                            <div class="text-[11px] text-inksecondary">Email Me</div>
+                            <div class="text-[12px] font-medium text-ink truncate">Simphiwesanele60@gmail.com</div>
+                        </div>
+                    </button>
+
+                    <a href="https://linkedin.com/in/simphiwe-khumalo-7173a4241" target="_blank" class="card p-4 flex items-center gap-3 text-left">
+                        <div class="w-10 h-10 shrink-0 rounded-full bg-surfacealt flex items-center justify-center text-ink"><i class="fa-brands fa-linkedin"></i></div>
+                        <div>
+                            <div class="text-[11px] text-inksecondary">LinkedIn Profile</div>
+                            <div class="text-[12px] font-medium text-ink">Simphiwe Khumalo</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-8 bg-surface border-t border-divider text-center text-[12px] text-inksecondary no-print">
+        <div class="max-w-6xl mx-auto px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>© <span id="year"></span> Simphiwe Khumalo. All rights reserved.</div>
+            <div class="flex items-center gap-4">
+                <a href="https://linkedin.com/in/simphiwe-khumalo-7173a4241" target="_blank" class="hover:text-ink"><i class="fa-brands fa-linkedin text-base"></i></a>
+                <a href="https://github.com/Phiwe22code" target="_blank" class="hover:text-ink"><i class="fa-brands fa-github text-base"></i></a>
+                <a href="mailto:Simphiwesanele60@gmail.com" class="hover:text-ink"><i class="fa-solid fa-envelope text-base"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOAST -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 px-4 py-3 rounded-xl bg-ink text-white font-medium text-[12px] shadow-xl flex items-center gap-2">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastMsg">Action completed!</span>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function filterProjects(category, btn) {
+            const cards = document.querySelectorAll('.project-card');
+            const filterBtns = document.querySelectorAll('.seg-btn');
+
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function copyToClipboard(text, message) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast(message);
+            }).catch(() => {
+                showToast("Failed to copy");
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            toastMsg.textContent = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
